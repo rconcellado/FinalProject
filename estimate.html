@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Greenthumb - Landscaping and Lawns Experts in Canada</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Template Javascript -->
+         <script src="js/estimate.js" defer></script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h1 class="m-0">Online Estimate</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="testimonial.html" class="nav-item nav-link">Testimonials</a>
+                <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="estimate.html" class="nav-item nav-link">Online Estimate</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <p class="mb-4">
+        <p>
+            Have a landscaping idea but not sure where to start?  You can get a decent idea of cost from our calculator, 
+            just plug in your needs and generate a base price / estimate.<br><br>
+            
+            RESIDENTIAL SERVICES PRICES<br><br>
+            
+            Based off an average yard size of 10000 Square Feet, choose what you need done weekly, monthly or just one time!
+        </p>
+    </div>
+
+    <div class="gridContainer">
+        <div class="gColumn">Description</div>
+        <div class="gColumn">Qtd</div>
+        <div class="gColumn">Price</div>
+        <div class="gColumn">Sub Total</div>
+        
+        <div class="gRows">Landscape Maintenance (pruning / weed removal)</div>
+        <div class="gRows"><input id="Service1" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $10.00/Hr</div>
+        <div class="gRows" id="LandscapeAmt"></div>
+
+        <div class="gRows">Treatment & fertilization</label></div>
+        <div class="gRows"></b><input id="Service2" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $0.003/Square Foot</div>
+        <div class="gRows" id="TreatmentAmt"></div>
+
+        <div class="gRows">Lawn Thatching / clean up</div>               
+        <div class="gRows"><input id="Service3" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $0.004/Square Foot</div>
+        <div class="gRows" id="LawnAmt"></div>
+
+        <div class="gRows">Grass cutting</div>
+        <div class="gRows"><input id="Service4" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $0.004/Square Foot</div>
+        <div class="gRows" id="GrassCuttingAmt"></div>
+
+        <div class="gRows">Mulching</div>
+        <div class="gRows"><input id="Service5" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $0.001/Square Foot</div>
+        <div class="gRows" id="MulchingAmt"></div>
+
+        <div class="gRows">Seeding</div>
+        <div class="gRows"><input id="Service6" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $0.007/Square Foot</div>
+        <div class="gRows" id="SeedingAmt"></div>
+
+        <div class="gRows">Aeration</div>
+        <div class="gRows"><input id="Service7" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $0.003/Square Foot</div>
+        <div class="gRows" id="AerationAmt"></div>
+
+        <div class="gRows">Tree-health inspections</div>
+        <div class="gRows"><input id="Service8" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Unit Price: $5.00/Tree</div>
+        <div class="gRows" id="TreehealthAmt"></div>
+
+        <div class="gRows">Tree trimming</div>
+        <div class="gRows"><input id="Service9" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $40.00/Tree</div>
+        <div class="gRows" id="TreetrimmingAmt"></div>
+
+        <div class="gRows">Shrub pruning</div>
+        <div class="gRows"><input id="Service10" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $10.00/Hr</div>
+        <div class="gRows" id="ShrubAmt"></div>
+
+        <div class="gRows">Weed management</div>
+        <div class="gRows"><input id="Service11" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $10.00/Hr</div>
+        <div class="gRows" id="WeedManageAmt"></div>
+
+        <div class="gRows">Tree removal</div>
+        <div class="gRows"><input id="Service12" type="number" onchange="ComputeEstimate()"></div>
+        <div class="gRows">Price: $80.00/Tree</div>
+        <div class="gRows" id="TreeremovalAmt"></div>
+        <div class="lastLine1"></div>
+        <div class="lastLine1"></div>
+        <div class="lastLine">Grand Total</div>
+        <div class="lastLine" id="total"></div>
+    </div>
+
+    &copy; <a class="border-bottom" href="#">Green Thumb Landscaping</a>, All Right Reserved.
+
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
